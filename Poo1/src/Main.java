@@ -16,7 +16,7 @@ public class Main {
 		Persona1 Luis=new Persona1();
 		Luis.Saludar(); */
 	
-		System.out.println("BIENVENIDO A PIRATAGOTCHI!!!\nNombra a tu mascota virtual superdependiente!");
+		System.out.println("BIENVENIDO A PIRATAGOTCHI!!!\nNombra a tu mascota virtual superdependiente!!!");
 		
 	}		
 }
