@@ -49,7 +49,7 @@ public class Piratagotchi {
 	}
 	
 	public void comer() {
-		if(this.hambriento=true) {
+		if(this.hambriento==true) {
 			this.hambriento=false;
 			System.out.println(this.nombre+" ha comido :D");
 		}else {
@@ -66,13 +66,13 @@ public class Piratagotchi {
 		}
 	}
 	public void jugar(int horasJugando) {
-		if(this.hambriento=false) {
+		if(this.hambriento==false) {
 			this.nivelFelicidad+=horasJugando;
 			if(this.nivelFelicidad>10) {
 				this.nivelFelicidad=10;
 			}
-			this.hambriento=true;
 			System.out.println(this.nombre+" ha jugado mucho y tiene mas hambre que el perro de un ciego");
+			this.hambriento=true;
 		}else {
 			this.energia-=horasJugando;
 			this.nivelFelicidad-=horasJugando;
@@ -90,10 +90,74 @@ public class Piratagotchi {
 		if(this.nivelFelicidad<=3) {
 			respuesta+=" esta triston (jugar le animara)";
 		}
-		if(this.hambriento=true) {
+		if(this.hambriento==true) {
 			respuesta+=" tiene hambre (dale algo de comer)";
 		}
+		else {
+			System.out.println(this.nombre+" esta contento y no tiene necesidades :D");
+		}
 		return respuesta;
+	}
+	public void observar() {
+		int opcion;
+		opcion=(int)Math.floor(Math.random()*(5)+1);
+		switch(opcion) {
+		case 1:
+			System.out.println("  ┌─┬─┬────┬─┬─┐");
+			System.out.println("┌─┤ │*│    │*│ ├─┐");
+			System.out.println("└─┤ └─┘    └─┘ ├─┘");
+			System.out.println("  │    ┌  ┐    │");
+			System.out.println("  │    └──┘    │");
+			System.out.println("  ├───┬────┬───┤");
+			System.out.println("  └───┘    └───┘");
+			System.out.println(this.nombre+" observa con admiracion el codigo que le dio vida :)");
+			break;
+		case 2:
+			System.out.println("  ┌────────────┐");
+			System.out.println("┌─┤            ├─┐");
+			System.out.println("└─┤ ┌┐      ┌┐ ├─┘");
+			System.out.println("  │ └┘ ──── └┘ │");
+			System.out.println("  │            │");
+			System.out.println("  ├───┬────┬───┤");
+			System.out.println("  └───┘    └───┘");
+			System.out.println(this.nombre+" te mira de vuelta, pensando: 'Tengo zusto'");
+			break;
+		case 3:
+			System.out.println("       ┌───────────────┐");
+			System.out.println("       │ *****  *   *  │");
+			System.out.println("       │   *     * *   │");
+			System.out.println("       │   *      *    │");
+			System.out.println("  ┌────┴───────┬───────┘");
+			System.out.println("  │            │");
+			System.out.println("┌─┤            ├─┐");
+			System.out.println("└─┤            ├─┘ ***");
+			System.out.println("  │            │   ***");
+			System.out.println("  ├───┬────┬───┤   ***");
+			System.out.println("  └───┘    └───┘   ***");
+			System.out.println(this.nombre+" esta de chill viendo el programa de Chicote");
+			break;
+		case 4:
+			System.out.println("                 Z");
+			System.out.println("  ┌────────────┐Z");
+			System.out.println("  │            │ Z");
+			System.out.println("┌─┤            ├─┐");
+			System.out.println("└─┤ LI      LI ├─┘");
+			System.out.println("  │     O      │");
+			System.out.println("  ├───┬────┬───┤");
+			System.out.println("  └───┘    └───┘");
+			System.out.println(this.nombre+" se ha echado una legendaria siesta de 8 horas");
+			break;
+		case 5:
+			System.out.println(" ┌─┐      ┌─┐");
+			System.out.println("┌┴─┴──────┴─┴┐");
+			System.out.println("│            │");
+			System.out.println("│ >>      << │");
+			System.out.println("│     O      │");
+			System.out.println("│            │");
+			System.out.println("├───┬────┬───┤");
+			System.out.println("└───┘    └───┘");
+			System.out.println(this.nombre+" se esta estirando (estar encerrado en la consola del IDE es agobiante)");
+		}
 	}
 	
 }
