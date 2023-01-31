@@ -1,9 +1,10 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
-		int opcion;
+		int opcion = 0;
 		String nombre;
 		
 	/*
@@ -20,6 +21,7 @@ public class Main {
 		nombre=sc.nextLine();
 		Piratagotchi nombre1=new Piratagotchi(nombre);
 		do {
+			try {
 			System.out.println("Que quieres hacer?");
 			System.out.println("1. Jugar con "+nombre1.getNombre()+"\n2. Darle de comer\n3. Hacer que haga la dormicion\n4. Comprobar necesidades\n5. Mirar a "+nombre1.getNombre()+"\n6. Salir");
 			opcion=sc.nextInt();
@@ -34,7 +36,10 @@ public class Main {
 				nombre1.comer();
 				break;
 			case 3:
-				nombre1.dormir(opcion);
+				int suenio;
+				System.out.println("Cuantas horas quieres que duerma "+nombre1.getNombre()+"?");
+				suenio=sc.nextInt();
+				nombre1.dormir(suenio);
 				break;
 			case 4:
 				String respuesta;
@@ -46,6 +51,14 @@ public class Main {
 				break;
 			case 6:
 				System.out.println("Gracias por jugar! Nos vemos :3");
+				break;
+			default:
+				System.out.println("Hmm, ese valor no es correcto");
+			}
+			
+			}catch(InputMismatchException ex) {
+				System.out.println("Has introducido un valor incorrecto, solo numeros enteros del 1 al 6");
+				sc.next();
 			}
 		}while(opcion!=6);
 	}		

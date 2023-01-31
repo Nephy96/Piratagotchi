@@ -16,9 +16,9 @@ public class Piratagotchi {
 		this.hambriento=false;
 		this.nivelFelicidad=1;
 	}
-	public Piratagotchi(String n) {
+	public Piratagotchi(String nombre) {
 		Random random=new Random();
-		this.nombre=n;
+		this.nombre=nombre;
 		this.energia=(int)Math.floor(Math.random()*(10-1)+1);
 		this.hambriento=random.nextBoolean();
 		this.nivelFelicidad=(int)Math.floor(Math.random()*(10-1)+1);;
@@ -59,8 +59,10 @@ public class Piratagotchi {
 	}
 	public void dormir(int horasDurmiendo) {
 		this.energia+=horasDurmiendo;
+		if(this.energia<=10) {
 		System.out.println(this.nombre+" ha dormido lo necesario y esta listo para jugar");
-		if(this.energia>10) {
+		}
+		else if(this.energia>10) {
 			this.nivelFelicidad-=this.nivelFelicidad-10;
 			System.out.println(this.nombre+" ha dormido de mas y esta triste por desaprovechar el dia :(");
 		}
