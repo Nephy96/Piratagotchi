@@ -7,6 +7,7 @@ public class Piratagotchi {
 	private int energia;
 	private boolean hambriento;
 	private int nivelFelicidad;
+	public final static int VALOR_MINIMO=3;
 	
 	//Metodos
 	
@@ -62,7 +63,7 @@ public class Piratagotchi {
 		if(this.energia<=10) {
 		System.out.println(this.nombre+" ha dormido lo necesario y esta listo para jugar");
 		}
-		else if(this.energia>10) {
+		else{
 			this.nivelFelicidad-=this.nivelFelicidad-10;
 			System.out.println(this.nombre+" ha dormido de mas y esta triste por desaprovechar el dia :(");
 		}
@@ -86,10 +87,10 @@ public class Piratagotchi {
 	}
 	public String getNecesidades() {
 		String respuesta=this.nombre;
-		if(this.energia<=3) {
+		if(this.energia<=VALOR_MINIMO) {
 			respuesta+=" necesita dormir";
 		}
-		if(this.nivelFelicidad<=3) {
+		if(this.nivelFelicidad<=VALOR_MINIMO) {
 			respuesta+=" esta triston (jugar le animara)";
 		}
 		if(this.hambriento==true) {
@@ -100,7 +101,7 @@ public class Piratagotchi {
 		}
 		return respuesta;
 	}
-	public void observar() {
+	public void observar() {	//Se ha usado la página Asciiflow.com para los dibujitos
 		int opcion;
 		opcion=(int)Math.floor(Math.random()*(5)+1);
 		switch(opcion) {

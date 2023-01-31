@@ -6,16 +6,6 @@ public class Main {
 		Scanner sc=new Scanner(System.in);
 		int opcion = 0;
 		String nombre;
-		
-	/*
-		Cuadrado piquitos=new Cuadrado(3);
-		int area=piquitos.getArea();
-		System.out.println("Area del cuadrado: "+area);
-		piquitos.printCuadrado(); */
-		
-	/*	
-		Persona1 Luis=new Persona1();
-		Luis.Saludar(); */
 	
 		System.out.println("BIENVENIDO A PIRATAGOTCHI!!!\nNombra a tu mascota virtual superdependiente!!!");
 		nombre=sc.nextLine();
